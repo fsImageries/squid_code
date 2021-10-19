@@ -34,14 +34,17 @@
             <th class="code">EXAMPLE</th>
           </tr>
           <tr>
-            <td class="code">var x = 100;</td>
+            <td class="code">let x = 100;</td>
+          </tr>
+          <tr>
+            <td class="code">const y = 50;</td>
           </tr>
         </tbody>
       </table>
       <p>Und hier was im oberen Beispiel passiert:</p>
 
       <ul>
-        <li>var ist ein Stichwort zum deklarieren der Variable.</li>
+        <li>let ist ein Stichwort zum deklarieren der Variable.</li>
         <li>x ist der Name von dieser Variable.</li>
         <li>
           = ist der Operator und sagt JS, dass als nächstes ein Wert folgt.
@@ -62,9 +65,9 @@
           </tr>
           <tr>
             <td class="code">
-              var x = 100;
+              let x = 100;
               <br />
-              var y = x + 102
+              let y = x + 102
               <br />
               y;
             </td>
@@ -78,9 +81,12 @@
     </div>
     <div class="section3">
       <h2>Variablen neu zuweisen</h2>
-      <p>
-        Du kannst ein bereites existierende Variable einen neunen Wert geben.
-      </p>
+      <p style="display: inline;">
+        Du kannst ein bereites existierende Variable einen neuen Wert geben.
+        <br style="margin: 0;">
+         Achtung! Das geht aber nur mit <p class="highlight">let</p>. 
+         Die <p class="highlight">const</p>-Deklaration erstellt eine Konstante.
+         Der Wert einer Konstanten kann nicht verändert werden durch Zuweisung oder Neudeklaration.</p>
       <table class="codeBlock" style="width: 100%">
         <tbody>
           <tr>
@@ -88,7 +94,7 @@
           </tr>
           <tr>
             <td class="code">
-              var light = "red";
+              let light = "red";
               <br />
               light = "green";
               <br />
@@ -129,13 +135,13 @@
           </tr>
           <tr>
             <td class="code">
-              var squidGame = "2021";
+              let squidGame = "2021";
               <br />
-              var _Guard = "triangle";
+              let _Guard = "triangle";
               <br />
-              var NumberOfPlayers = 456;
+              let NumberOfPlayers = 456;
               <br />
-              var §PricePool = 45.6 "billion won";
+              let §PricePool = 45.6 "billion won";
             </td>
           </tr>
         </tbody>
@@ -148,13 +154,13 @@
           </tr>
           <tr>
             <td class="code">
-              var class = "FrontMan";
+              let class = "FrontMan";
               <br />
-              var 2stop2go = "triangle";
+              let 2stop2go = "triangle";
               <br />
-              var function = false;
+              let function = false;
               <br />
-              var winchance% = "zero";
+              let winchance% = "zero";
             </td>
           </tr>
         </tbody>
