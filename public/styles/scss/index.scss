@@ -18,8 +18,7 @@
   --color-navy-800: #10162f;
 
   --typoPro: "TYPOGRAPH PRO", sans-serif;
-  --montserrat: "Montserrat", sans-serif;
-  --hack: Hack, monospace;
+  --montserrat: 'Montserrat', sans-serif;
 }
 
 /* * {
@@ -30,54 +29,14 @@
 
 body {
   background-color: var(--color-navy-800);
-  margin: 0 5%;
-  color: var(--white);
-  font-family: var(--montserrat);
 }
 
 .headers {
   font-family: var(--montserrat);
   font-size: 2rem;
   color: var(--StairPinkDarker);
-  margin-bottom: 10%;
+
+  h1{
+      font-weight: 500;
+  }
 }
-
-.headers h1 {
-  font-weight: 700;
-  margin-bottom: 0;
-}
-
-.headers h2 {
-  margin-top: 0;
-  font-weight: 200;
-  font-size: 1.25rem;
-}
-
-.headers h2 div {
-  display: inline-block;
-  font-weight: 400;
-}
-
-.code{
-    font-family: var(--hack);
-    font-size: .85rem;
-    padding: 1%;
-    display: table-cell;
-    margin: 0;
-}
-
-.codeBlock {
-    border-spacing: 0;
-}
-
-.codeBlock tr {
-  background-color: #2d2d2d;
-  text-align: left;
-}
-
-.codeBlock tr:nth-of-type(even){
-    background-color: #333;
-}
-
-
-
