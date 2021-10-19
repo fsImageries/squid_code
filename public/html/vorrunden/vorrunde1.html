@@ -1,0 +1,155 @@
+<link rel="stylesheet" href="../styles/css/vorrunde.css" />
+
+<div class="headers">
+  <h1>Variablen</h1>
+  <h2>
+    <div>Variablen</div>
+    sind benannte Werte und können jede Art von JavaScript-Werten speichern.
+  </h2>
+</div>
+
+<div class="section1">
+  <h2>Hier siehst du wie man die Variablen deklarieren kann:</h2>
+
+  <table class="codeBlock" style="width: 100%">
+    <tbody>
+      <tr>
+        <th class="code">EXAMPLE</th>
+      </tr>
+      <tr>
+        <td class="code">let x = 100;</td>
+      </tr>
+      <tr>
+        <td class="code">const y = 50;</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Und hier was im oberen Beispiel passiert:</p>
+
+  <ul>
+    <li>let ist ein Stichwort zum deklarieren der Variable.</li>
+    <li>x ist der Name von dieser Variable.</li>
+    <li>
+      = ist der Operator und sagt JS, dass als nächstes ein Wert folgt.
+    </li>
+    <li>100 ist der Wert der gespeichert werden soll.</li>
+  </ul>
+</div>
+<div class="section2">
+  <h2>Variablen benutzen</h2>
+  <p>
+    Nachdem du eine Variable deklariest hat, kannst du dich über den
+    gesamten Code auf den Namen beziehen.
+  </p>
+  <table class="codeBlock" style="width: 100%">
+    <tbody>
+      <tr>
+        <th class="code">EXAMPLE</th>
+      </tr>
+      <tr>
+        <td class="code">
+          let x = 100;
+          <br />
+          let y = x + 102
+          <br />
+          y;
+        </td>
+      </tr>
+      <tr>
+        <th class="code">OUTPUT</th>
+      </tr>
+      <td class="code">202</td>
+    </tbody>
+  </table>
+</div>
+<div class="section3">
+  <h2>Variablen neu zuweisen</h2>
+  <p style="display: inline;">
+    Du kannst ein bereites existierende Variable einen neuen Wert geben.
+    <br style="margin: 0;">
+     Achtung! Das geht aber nur mit <p class="highlight">let</p>. 
+     Die <p class="highlight">const</p>-Deklaration erstellt eine Konstante.
+     Der Wert einer Konstanten kann nicht verändert werden durch Zuweisung oder Neudeklaration.</p>
+  <table class="codeBlock" style="width: 100%">
+    <tbody>
+      <tr>
+        <th class="code">EXAMPLE</th>
+      </tr>
+      <tr>
+        <td class="code">
+          let light = "red";
+          <br />
+          light = "green";
+          <br />
+          light;
+        </td>
+      </tr>
+      <tr>
+        <th class="code">OUTPUT</th>
+      </tr>
+      <td class="code">"green"</td>
+    </tbody>
+  </table>
+</div>
+<div class="section4">
+  <h2>Variablen benennen</h2>
+  <p>
+    Das benennen von Variablen weist sich als recht flexibel, solang du
+    folgende Regeln folgst:
+  </p>
+  <ul>
+    <li>
+      Beginne mit einem Buchstaben, Underscore _, oder Dollar-Zeichen $.
+    </li>
+    <li>
+      Nach dem ersten Buchstaben kannst du Zahlen benutzen, als auch
+      Buchstaben, Underscore _, oder Dollar-Zeichen $.
+    </li>
+    <li>
+      Benutze keine Stichwörte, die von JavaScript bereits festgelegt worden
+      sind.
+    </li>
+  </ul>
+  <p>Hier siehst du ein paar Bespiele von gültigen Variablennamen:</p>
+  <table class="codeBlock" style="width: 100%">
+    <tbody>
+      <tr>
+        <th class="code">EXAMPLE</th>
+      </tr>
+      <tr>
+        <td class="code">
+          let squidGame = "2021";
+          <br />
+          let _Guard = "triangle";
+          <br />
+          let NumberOfPlayers = 456;
+          <br />
+          let §PricePool = 45.6 "billion won";
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Und hier sind Bespiele von ungültigen Variablennamen:</p>
+  <table class="codeBlock" style="width: 100%">
+    <tbody>
+      <tr>
+        <th class="code">EXAMPLE</th>
+      </tr>
+      <tr>
+        <td class="code">
+          let class = "FrontMan";
+          <br />
+          let 2stop2go = "triangle";
+          <br />
+          let function = false;
+          <br />
+          let winchance% = "zero";
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Variablennamen sind Fallsensetiv, d.h. myvar, myVar, MyVar sind
+    unterschiedliche Variablen.
+  </p>
+</div>
