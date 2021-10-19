@@ -1,0 +1,20 @@
+:root {
+  --white: #fff;
+  --GuardRed: #ed1b76;
+  --GuardRedLight: #f44786;
+  --PlayerGreenDark: #037a79ff;
+  --PlayerGreen: #037a76;
+  --PlayerGreenLight: #239f9c;
+  --StairPink: #fcb6eaff;
+  --StairGreen: #e1feacff;
+  --FloorGrey: #485b79ff;
+  --StairBlueGreen: #43bcccff;
+  --VIPGold: #fcc201;
+  --FrontManGrey: #344f6a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
