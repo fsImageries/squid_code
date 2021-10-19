@@ -58,16 +58,17 @@ body {
   font-weight: 400;
 }
 
-.code{
-    font-family: var(--hack);
-    font-size: .85rem;
-    padding: 1%;
-    display: table-cell;
-    margin: 0;
+.code {
+  font-family: var(--hack);
+  font-size: 0.85rem;
+  padding: 1%;
+  display: table-cell;
+  margin: 0;
 }
 
 .codeBlock {
-    border-spacing: 0;
+  border-spacing: 0;
+  margin-bottom: 2rem;
 }
 
 .codeBlock tr {
@@ -75,9 +76,10 @@ body {
   text-align: left;
 }
 
-.codeBlock tr:nth-of-type(even){
-    background-color: #333;
+.codeBlock tr:nth-of-type(even) {
+  background-color: #333;
 }
 
-
-
+li {
+  margin-bottom: 2rem;
+}
