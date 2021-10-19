@@ -11498,20 +11498,22 @@ CodeMirror.defineMIME("application/typescript", { name: "javascript", typescript
 },{"../../lib/codemirror":3}],5:[function(require,module,exports){
 let CodeMirror = require("codemirror/lib/codemirror");
 let js = require("codemirror/mode/javascript/javascript");
-let js_hint = require("codemirror/addon/hint/javascript-hint")
-let js_show = require("codemirror/addon/hint/show-hint")
+let js_hint = require("codemirror/addon/hint/javascript-hint");
+let js_show = require("codemirror/addon/hint/show-hint");
 
-
-let editor = CodeMirror.fromTextArea(document.getElementById("codeinput"),{
-    lineNumbers: true,
-    matchBrackets: true,
-    gutter: true,
-    lineWrapping: true,
-    autoCloseTags: true,
-    extraKeys: {"Ctrl-Space": "autocomplete"},
-    // mode: {name: "javascript", globalVars: true},
-    theme: "ambiance"
+let editor = CodeMirror.fromTextArea(document.getElementById("codeinput"), {
+  lineNumbers: true,
+  matchBrackets: true,
+  gutter: true,
+  lineWrapping: true,
+  autoCloseTags: true,
+  extraKeys: { "Ctrl-Space": "autocomplete" },
+  mode: {name: "javascript", globalVars: true},
+  theme: "ambiance",
 });
 
+editor.on("change", () => {
+  console.log(editor.getValue());
+});
 
 },{"codemirror/addon/hint/javascript-hint":1,"codemirror/addon/hint/show-hint":2,"codemirror/lib/codemirror":3,"codemirror/mode/javascript/javascript":4}]},{},[5]);
