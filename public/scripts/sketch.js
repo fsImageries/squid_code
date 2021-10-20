@@ -4,19 +4,31 @@ $(document).on("DOMSubtreeModified", () => {
   $(":root").css("--bgHeight", `${height}px`);
 });
 
+let push = 0;
+let anim = false;
+
+const setAnim = (val) => (anim = val);
+
 function setup() {
-  let cnv = createCanvas(400, 400);
+  let cnv = createCanvas(
+    $(".codeinputContainer").width(),
+    $(".codeinputContainer").height() * 2
+  );
   cnv.parent("sketchHolder");
 }
 
-let some = 0;
 function draw() {
   background(127);
   fill(0);
-  rect(0 - some, 0, height / 2, width);
+  rect(-width / 2 - push, 0, width, height);
 
   fill(255);
-  rect(width / 2 + some, 0, height / 2, width);
+  rect(width / 2 + push, 0, width, height);
 
-  some++;
+  push = anim ? push + 1 : push;
+  // some++;
 }
+
+const isValid = (val) => {
+  console.log(val);
+};
