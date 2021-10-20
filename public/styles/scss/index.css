@@ -15,7 +15,8 @@
   --FrontManGrey: #344f6a;
   --color-navy-800: #10162f;
   --typoPro: "TYPOGRAPH PRO", sans-serif;
-  --montserrat: 'Montserrat', sans-serif;
+  --montserrat: "Montserrat", sans-serif;
+  --hack: Hack, monospace;
 }
 
 /* * {
@@ -25,15 +26,8 @@
 } */
 body {
   background-color: var(--color-navy-800);
-}
-
-.headers {
+  margin: 0 5%;
+  color: var(--white);
   font-family: var(--montserrat);
-  font-size: 2rem;
-  color: var(--StairPinkDarker);
-}
-
-.headers h1 {
-  font-weight: 500;
 }
 /*# sourceMappingURL=index.css.map */
