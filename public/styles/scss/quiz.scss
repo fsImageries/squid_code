@@ -1,0 +1,67 @@
+@keyframes colorChange {
+  // 0% { filter: hue-rotate(0deg)}
+  // 50% { filter: hue-rotate(180deg)}
+  // 100% { filter: hue-rotate(360deg)}
+
+  0% {
+    background-color: var(--GuardRed);
+  }
+  25% {
+    background-color: var(--PlayerGreen);
+  }
+  75% {
+    background-color: var(--VIPGold);
+  }
+  100% {
+    background-color: var(--GuardRed);
+  }
+}
+
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+
+  .quizItem {
+    &::after {
+      //   background: rgba(255, 255, 255, 0) !important;
+    }
+
+    &:hover .circle,
+    &:hover .triangle,
+    &:hover .box {
+      animation: colorChange 5s linear infinite;
+    }
+
+    border: 1px rgba(255, 255, 255, 0.5) solid !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    height: 10vh;
+    width: 100%;
+    // display: inline-block;
+    position: relative;
+    display: flex;
+
+    .circle {
+      mask: url("../../../svgs/circle.svg") no-repeat center;
+      background-color: var(--GuardRed);
+    }
+
+    .triangle {
+      mask: url("../../../svgs/triangle.svg") no-repeat center;
+      background-color: var(--GuardRed);
+    }
+
+    .box {
+      mask: url("../../../svgs/box.svg") no-repeat center;
+      background-color: var(--GuardRed);
+      //   transform: scale(0.87);
+    }
+
+    .shape {
+      transform: scale(2);
+      // z-index: -1;
+      width: 15%;
+    }
+  }
+}

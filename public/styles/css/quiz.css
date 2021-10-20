@@ -1,0 +1,83 @@
+@-webkit-keyframes colorChange {
+  0% {
+    background-color: var(--GuardRed);
+  }
+  25% {
+    background-color: var(--PlayerGreen);
+  }
+  75% {
+    background-color: var(--VIPGold);
+  }
+  100% {
+    background-color: var(--GuardRed);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: var(--GuardRed);
+  }
+  25% {
+    background-color: var(--PlayerGreen);
+  }
+  75% {
+    background-color: var(--VIPGold);
+  }
+  100% {
+    background-color: var(--GuardRed);
+  }
+}
+
+.quiz {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10vh;
+}
+
+.quiz .quizItem {
+  border: 1px rgba(255, 255, 255, 0.5) solid !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  height: 10vh;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.quiz .quizItem:hover .circle,
+.quiz .quizItem:hover .triangle,
+.quiz .quizItem:hover .box {
+  -webkit-animation: colorChange 5s linear infinite;
+          animation: colorChange 5s linear infinite;
+}
+
+.quiz .quizItem .circle {
+  -webkit-mask: url("../../../svgs/circle.svg") no-repeat center;
+          mask: url("../../../svgs/circle.svg") no-repeat center;
+  background-color: var(--GuardRed);
+}
+
+.quiz .quizItem .triangle {
+  -webkit-mask: url("../../../svgs/triangle.svg") no-repeat center;
+          mask: url("../../../svgs/triangle.svg") no-repeat center;
+  background-color: var(--GuardRed);
+}
+
+.quiz .quizItem .box {
+  -webkit-mask: url("../../../svgs/box.svg") no-repeat center;
+          mask: url("../../../svgs/box.svg") no-repeat center;
+  background-color: var(--GuardRed);
+}
+
+.quiz .quizItem .shape {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  width: 15%;
+}
+/*# sourceMappingURL=quiz.css.map */
