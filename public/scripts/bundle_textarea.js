@@ -11508,9 +11508,11 @@ let editor = CodeMirror.fromTextArea(document.getElementById("codeinput"), {
   lineWrapping: true,
   autoCloseTags: true,
   extraKeys: { "Ctrl-Space": "autocomplete" },
-  mode: {name: "javascript", globalVars: true},
+  mode: { name: "javascript", globalVars: true },
   theme: "ambiance",
 });
+
+editor.setSize(null, 100);
 
 editor.on("change", () => {
   console.log(editor.getValue());

@@ -37,6 +37,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10vh;
+  margin-top: 20vh;
 }
 
 .quiz .quizItem {
@@ -53,31 +54,37 @@
 .quiz .quizItem:hover .circle,
 .quiz .quizItem:hover .triangle,
 .quiz .quizItem:hover .box {
-  -webkit-animation: colorChange 5s linear infinite;
-          animation: colorChange 5s linear infinite;
+  z-index: 5;
 }
 
 .quiz .quizItem .circle {
   -webkit-mask: url("../../../svgs/circle.svg") no-repeat center;
           mask: url("../../../svgs/circle.svg") no-repeat center;
-  background-color: var(--GuardRed);
 }
 
 .quiz .quizItem .triangle {
   -webkit-mask: url("../../../svgs/triangle.svg") no-repeat center;
           mask: url("../../../svgs/triangle.svg") no-repeat center;
-  background-color: var(--GuardRed);
 }
 
 .quiz .quizItem .box {
   -webkit-mask: url("../../../svgs/box.svg") no-repeat center;
           mask: url("../../../svgs/box.svg") no-repeat center;
-  background-color: var(--GuardRed);
 }
 
 .quiz .quizItem .shape {
+  background-color: var(--GuardRed);
   -webkit-transform: scale(2);
           transform: scale(2);
+  z-index: -1;
   width: 15%;
+}
+
+.quiz .quizItem .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=quiz.css.map */
