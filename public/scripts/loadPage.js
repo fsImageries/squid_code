@@ -4,3 +4,5 @@ if (param.includes("page")) {
   const page = param.slice(idx, param.length);
   $(".content").load(`${page}.html`);
 }
+
+

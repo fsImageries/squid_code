@@ -1,8 +1,9 @@
 <!-- Imports -->
 
 <link rel="stylesheet" href="../styles/css/optigame.css" />
-<script defer src="../scripts/button.js"></script>
-<link rel="stylesheet" href="../styles/css/button.css" />
+<!-- <script defer src="../scripts/button.js"></script>
+<link rel="stylesheet" href="../styles/css/button.css" /> -->
+<link rel="stylesheet" href="../styles/css/sketch.css">
 <link
   rel="stylesheet"
   href="../../../node_modules/codemirror/lib/codemirror.css"
@@ -15,7 +16,10 @@
   rel="stylesheet"
   href="../../../node_modules/codemirror/addon/hint/show-hint.css"
 />
+<script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
 <script defer type="module" src="../scripts/bundle_textarea.js"></script>
+<script defer src="../scripts/sketch.js"></script>
+
 
 <!-- Actual Code -->
 
@@ -38,8 +42,12 @@
   </div>
 </div>
 
+<div id="sketchHolder">
+  <!-- Our sketch will go here! -->
+</div>
 <div class="codeinputContainer">
-  <textarea id="codeinput"> const gate = "closed";
+  <textarea id="codeinput">
+ const gate = "closed";
 gate = "open";
 gate;
   </textarea>
