@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../styles/css/optigame.css" />
 <script defer src="../scripts/button.js"></script>
-<link rel="stylesheet" href="../styles/css/button.css">
+<link rel="stylesheet" href="../styles/css/button.css" />
 <link
   rel="stylesheet"
   href="../../../node_modules/codemirror/lib/codemirror.css"
@@ -34,27 +34,32 @@
     </p>
   </div>
 </div>
+
+<div class="codeinputContainer">
+  <textarea id="codeinput">
+ let gate = "closed";
+gate;
+  </textarea>
+</div>
 <div class="task">
   <table class="codeBlock" style="width: 100%">
     <tbody>
-      <tr>
-        <th class="code">TASK</th>
+      <!-- <tr>
+        <th class="code">TASK: Find the error and fix it!</th>
       </tr>
       <tr>
         <td class="code">
-          let gate = "closed";
+          const gate = "closed";
+          <br />
+          gate = "open";
           <br />
           gate;
         </td>
-      </tr>
+      </tr> -->
       <tr>
         <th class="code">OUTPUT</th>
       </tr>
-      <td class="code">closed</td>
+      <td class="code">The gate is closed.</td>
     </tbody>
   </table>
 </div>
-<div class="codeinputContainer">
-  <textarea name="" id="codeinput" cols="30" rows="10"> </textarea>
-</div>
-
