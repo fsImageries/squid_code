@@ -19,10 +19,10 @@ function setup() {
 
 function draw() {
   background(127);
-  fill(0);
+  fill($(":root").css("--GuardRed"));
   rect(-width / 2 - push, 0, width, height);
 
-  fill(255);
+  fill($(":root").css("--GuardRed"));
   rect(width / 2 + push, 0, width, height);
 
   push = anim ? push + 1 : push;
