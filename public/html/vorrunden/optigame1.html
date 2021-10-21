@@ -1,6 +1,9 @@
+<!-- Imports -->
+
 <link rel="stylesheet" href="../styles/css/optigame.css" />
-<script defer src="../scripts/button.js"></script>
-<link rel="stylesheet" href="../styles/css/button.css" />
+<!-- <script defer src="../scripts/button.js"></script>
+<link rel="stylesheet" href="../styles/css/button.css" /> -->
+<link rel="stylesheet" href="../styles/css/sketch.css" />
 <link
   rel="stylesheet"
   href="../../../node_modules/codemirror/lib/codemirror.css"
@@ -13,10 +16,13 @@
   rel="stylesheet"
   href="../../../node_modules/codemirror/addon/hint/show-hint.css"
 />
+<script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
 <script defer type="module" src="../scripts/bundle_textarea.js"></script>
+<script defer src="../scripts/optigame1-2_sketch.js"></script>
 
+<!-- Actual Code -->
 <div class="header">
-  <h1>Open the first gate!</h1>
+  <h1>Open the gate!</h1>
 </div>
 <div class="instructions">
   <div class="avatar-img">
@@ -28,16 +34,19 @@
   </div>
   <div class="box1 sb1">
     <p>
-      Spieler: xxxx, man sagt, dass du dich in jedes System hacken kannst. Tu
-      mir ein Gefallen und ich gebe dir im Gegenzug einen Tipp für das erste
-      Spiel. Öffne für mich das Tor.
+      Hey Spieler xxxx, man sagt, dass du dich in jedes System hacken kannst.
+      Tue mir ein Gefallen und ich gebe dir einen Hint für das erste Spiel.
+      Öffne für mich das Tor, damit ich von der Insel weg kann.
     </p>
   </div>
 </div>
 
+<div id="sketchHolder">
+  <!-- Our sketch will go here! -->
+</div>
 <div class="codeinputContainer">
   <textarea id="codeinput">
- let gate = "closed";
+let gate = "closed";
 gate;
   </textarea>
 </div>
@@ -59,7 +68,26 @@ gate;
       <tr>
         <th class="code">OUTPUT</th>
       </tr>
-      <td class="code">The gate is closed.</td>
+      <td class="code output">
+        Uncaught TypeError: Assignment to constant variable.
+      </td>
     </tbody>
   </table>
+</div>
+
+<script>
+  // Check given input for correctness
+  const validate = (val) => {
+    if (val.includes("gate = 'open';")) setter();
+  };
+
+  // Gets called when given input is correct
+  const setter = () => {
+    setAnim(true);
+    $(".codeBlock .output").html("You did fine <3");
+  };
+</script>
+<div class="go">
+  <a href="../html/temp.html?page=vorrunden/optigame1-2" class="button" type="button"
+    ><span>Check</span></a>
 </div>
