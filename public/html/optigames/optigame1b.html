@@ -34,9 +34,8 @@
   </div>
   <div class="box1 sb1">
     <p>
-      Hey Spieler xxxx, man sagt, dass du dich in jedes System hacken kannst.
-      Tue mir ein Gefallen und ich gebe dir einen Hint für das erste Spiel.
-      Öffne für mich das Tor, damit ich von der Insel weg kann.
+      Schnell die Zeit drängt! Hier ist noch ein Tor. Öffne es und verdiene dir
+      ein Hinweis für die erste Runde, Spieler: xxxx!
     </p>
   </div>
 </div>
@@ -46,7 +45,8 @@
 </div>
 <div class="codeinputContainer">
   <textarea id="codeinput">
-let gate = "closed";
+const gate = "closed";
+gate = "open";
 gate;
   </textarea>
 </div>
@@ -75,21 +75,43 @@ gate;
   </table>
 </div>
 
-<div class="go active">
-  <a href="../html/temp.html?page=vorrunden/optigame1-2" class="button" type="button"
-    ><span>Check</span></a>
+<!-- <div class="go active">
+  <a href="../html/temp.html?page=Base/base" class="button" type="button"
+    ><span>Back to Base</span></a>
+</div> -->
+
+<div style="display: flex; justify-content: center; gap: 10vh;">
+  <div class="go active">
+    <a
+      href="../html/temp.html?page=optigames/optigame1a"
+      class="button"
+      type="button"
+      ><span>Back</span></a
+    >
+  </div>
+
+  <div class="go">
+    <a
+      href="../html/temp.html?page=Base/base"
+      class="button"
+      type="button"
+      ><span>Next</span></a
+    >
+  </div>
 </div>
+
 
 <script>
   // Check given input for correctness
   const validate = (val) => {
-    if (val.includes("gate = 'open';")) setter();
+    if (val.includes("let gate")) setter();
   };
 
   // Gets called when given input is correct
   const setter = () => {
     setAnim(true);
-    $(".codeBlock .output").html("You did fine <3");
+    $(".codeBlock .output").html("You did fine 🎉");
+    $(".go").toggleClass("active", true)
   };
 </script>
 

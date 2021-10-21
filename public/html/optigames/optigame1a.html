@@ -1,8 +1,8 @@
 <!-- Imports -->
 
 <link rel="stylesheet" href="../styles/css/optigame.css" />
-<!-- <script defer src="../scripts/button.js"></script>
-<link rel="stylesheet" href="../styles/css/button.css" /> -->
+<!-- <script defer src="../scripts/button.js"></script> -->
+<link rel="stylesheet" href="../styles/css/buttons.css" />
 <link rel="stylesheet" href="../styles/css/sketch.css" />
 <link
   rel="stylesheet"
@@ -34,8 +34,9 @@
   </div>
   <div class="box1 sb1">
     <p>
-      Schnell die Zeit drängt! Hier ist noch ein Tor. Öffne es und verdiene dir
-      ein Hinweis für die erste Runde, Spieler: xxxx!
+      Hey Spieler xxxx, man sagt, dass du dich in jedes System hacken kannst.
+      Tue mir ein Gefallen und ich gebe dir einen Hint für das erste Spiel.
+      Öffne für mich das Tor, damit ich von der Insel weg kann.
     </p>
   </div>
 </div>
@@ -45,26 +46,13 @@
 </div>
 <div class="codeinputContainer">
   <textarea id="codeinput">
-const gate = "closed";
-gate = "open";
+let gate = "close";
 gate;
   </textarea>
 </div>
 <div class="task">
   <table class="codeBlock" style="width: 100%">
     <tbody>
-      <!-- <tr>
-        <th class="code">TASK: Find the error and fix it!</th>
-      </tr>
-      <tr>
-        <td class="code">
-          const gate = "closed";
-          <br />
-          gate = "open";
-          <br />
-          gate;
-        </td>
-      </tr> -->
       <tr>
         <th class="code">OUTPUT</th>
       </tr>
@@ -75,22 +63,57 @@ gate;
   </table>
 </div>
 
+<div style="display: flex; justify-content: center; gap: 10vh;">
+  <div class="go active">
+    <a
+      href="../html/temp.html?page=quiz/quiz1"
+      class="button"
+      type="button"
+      ><span>Back</span></a
+    >
+  </div>
+
+  <div class="go">
+    <a
+      href="../html/temp.html?page=optigames/optigame1b"
+      class="button"
+      type="button"
+      ><span>Next</span></a
+    >
+  </div>
+</div>
 
 
 <script>
   // Check given input for correctness
   const validate = (val) => {
-    if (val.includes("let gate")) setter();
+    let regEx = /let gate = (?:'|")close(?:'|");/g;
+    const let_check = val.search(regEx) !== -1;
+
+    regEx = /gate = (?:'|")open(?:'|");/g;
+    const assign_check = val.search(regEx) !== -1;
+
+    if (let_check && assign_check) setter();
   };
 
   // Gets called when given input is correct
   const setter = () => {
     setAnim(true);
-    $(".codeBlock .output").html("You did fine <3");
+    $(".codeBlock .output").html("You did fine 🎉");
+    $(".go").toggleClass("active", true)
   };
-</script>
 
-<div class="go2">
-    <a href="../html/temp.html?page=Base/base" class="button" type="button"
-      ><span>Back to Base</span></a>
-  </div>
+  function populate_outputs(header_txt, code_txt, output_txt) {
+    if (header_txt) $(".sb1").text(header_txt);
+
+    if (code_txt) $(".codeinput").text(code_txt);
+
+    if (output_txt) $(".code.output").text(output_txt);
+  }
+
+  const stri = `
+let gate = "close";
+gate;`;
+
+  populate_outputs(false, stri, "'close'");
+</script>

@@ -1,5 +1,3 @@
-
-
 let push = 0;
 let anim = false;
 
