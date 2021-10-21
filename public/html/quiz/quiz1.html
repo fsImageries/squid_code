@@ -1,32 +1,100 @@
 <link rel="stylesheet" href="../styles/css/quiz.css" />
 <link rel="stylesheet" href="../styles/css/glow_on_hover.css" />
+<link rel="stylesheet" href="../styles/css/buttons.css" />
+
 
 <div class="quiz">
-  <div class="fragen">Hier steht eine Quizfrage...</div>
+  <div class="frage">Hier steht eine Quizfrage...</div>
 
   <div class="antworten">
-
-    <div class="quizItem glow-on-hover">
-        <!-- <img class="shape" src="../../../svgs/circle.svg" alt="" srcset=""> -->
-        <div class="shape circle"></div>
-      <div class="text">hier steht eine antwort</div>
+    <div class="quizItem 0 glow-on-hover">
+      <div class="shape circle"></div>
+      <div class="text 0">hier steht eine antwort</div>
     </div>
 
-    <div class="quizItem glow-on-hover">
-        <!-- <img class="shape" src="../../../svgs/triangle.svg" alt="" srcset=""> -->
-        <div class="shape triangle"></div>
-      <div class="text">hier steht eine antwort</div>
+    <div class="quizItem 1 glow-on-hover">
+      <div class="shape triangle"></div>
+      <div class="text 1">hier steht eine antwort</div>
     </div>
 
-    <div class="quizItem glow-on-hover">
-        <!-- <img class="box shape" src="../../../svgs/box.svg" alt="" srcset=""> -->
-        <div class="shape box"></div>
-      <div class="text">hier steht eine antwort</div>
+    <div class="quizItem 2 glow-on-hover">
+      <div class="shape box"></div>
+      <div class="text 2">hier steht eine antwort</div>
     </div>
+  </div>
 
-
-
-
+  <div class="go">
+    <a
+      href="../html/temp.html?page=vorrunden/optigame1-2"
+      class="button"
+      type="button"
+      ><span>Practice</span></a
+    >
   </div>
 </div>
 
+<script>
+  const quiz = {
+    round1: {
+      answers: [
+        [
+          "herauszufinden, ob ein Wert eine Nummer oder Text ist.",
+          "deine Daten sicher zu verwahren.",
+          "ein Behälter für eine Größe zu sein.",
+        ],
+        [
+          "The Joy of Cooking",
+          "Mein Lieblingskochbuch ist",
+          "Mein Lieblingskochbuch ist The Joy of Cooking",
+        ],
+        [7, 4, 3],
+      ],
+      questions: [
+        "Der Zweck einer Variable ist es, ...",
+
+        `Welchen Wert hat 'statement'?\n
+      meinKochbuch = 'The Joy of Cooking'
+      deinKochbuch = 'How to Cook Everything'
+      statement    = 'Mein Lieblingskochbuch ist ' + meinKochbuch`,
+
+        `Was ist der Wert von numSides?\n
+      numSides = 4
+      triangle = 3
+      numSides = triangle`,
+      ],
+      rights: [2, 2, 2],
+    },
+  };
+
+  function* populate_quiz() {
+    let round = quiz.round1;
+    for (let i = 0; i < round.questions.length; i++) {
+      $(".frage").text(round.questions[i]);
+      $(".text").each((idx, elem) => {
+        $(elem).text(round.answers[i][idx]);
+      });
+      yield round.rights[i];
+    }
+  }
+
+  let iter = populate_quiz();
+  let right = iter.next().value;
+  let isDone = false;
+
+  $(".quizItem").on("click", function () {
+    const check = this.className.includes(right);
+    if (check) {
+      const ret = iter.next();
+      right = ret.value;
+      isDone = ret.done;
+
+      $(".quizItem").toggleClass("wrong", false);
+    } else {
+      $(this).toggleClass("wrong", true);
+    }
+
+    if (isDone) {
+      $(".go").toggleClass("active", true);
+    }
+  });
+</script>
