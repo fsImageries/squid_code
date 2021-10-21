@@ -17,9 +17,10 @@
   href="../../../node_modules/codemirror/addon/hint/show-hint.css"
 />
 <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+<script defer type="module" src="../scripts/bundle_textarea.js"></script>
+<script defer src="../scripts/optigame1-2_sketch.js"></script>
 
 <!-- Actual Code -->
-
 <div class="header">
   <h1>Open the gate!</h1>
 </div>
@@ -74,18 +75,17 @@ gate;
   </table>
 </div>
 
+
+
 <script>
+  // Check given input for correctness
   const validate = (val) => {
     if (val.includes("let gate")) setter();
   };
-</script>
 
-<script type="module" src="../scripts/bundle_textarea.js"></script>
-<script src="../scripts/sketch.js"></script>
-<script>
+  // Gets called when given input is correct
   const setter = () => {
     setAnim(true);
     $(".codeBlock .output").html("You did fine <3");
   };
-  // $(window).on("click", () => setAnim(true));
 </script>
