@@ -33,10 +33,15 @@
 } */
 
 body {
-  background-color: var(--color-navy-800);
+  // background-color: var(--color-navy-800);
+  background-image: url("../../../svgs/lowPolyBG3.svg");
   margin: 0 5%;
   color: var(--white);
   font-family: var(--montserrat);
+}
+
+.content{
+  margin-bottom: 10%;
 }
 
 .bg{

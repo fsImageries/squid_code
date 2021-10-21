@@ -1,9 +1,4 @@
-// TODO find alternative to 'DOMSubtreeModified'
-// Fix background height after canvas gets inserted into DOM
-$(document).on("DOMSubtreeModified", () => {
-  const height = $(document).height();
-  $(":root").css("--bgHeight", `${height}px`);
-});
+
 
 let push = 0;
 let anim = false;

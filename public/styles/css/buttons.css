@@ -3,8 +3,8 @@
   margin-top: 3%;
   /* position: absolute;
     left: 82%; */
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
   opacity: 0;
   visibility: hidden;
 }
@@ -21,18 +21,13 @@
 
 .button {
   border-radius: 2.5vh;
-  /* background-color: var(--CardBrown); */
-  /* background-color: var(--color-navy-800); */
   background-color: rgba(16, 22, 47, 0.75);
-  /* background-image: url("../../../svgs/lowPolyBG.svg"); */
   border: none;
   color: var(--white);
   text-align: center;
   font-size: 28px;
   padding: 20px;
   width: 200px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
 }
@@ -50,8 +45,8 @@
   cursor: pointer;
   display: inline-block;
   position: relative;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: padding-right 0.5s, right 0.5s;
+  transition: padding-right 0.5s, right 0.5s;
 }
 
 .button span::after {
@@ -60,7 +55,5 @@
   opacity: 0;
   top: 0;
   right: -20px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
 }
 /*# sourceMappingURL=buttons.css.map */
