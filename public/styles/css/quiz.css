@@ -1,34 +1,50 @@
-@-webkit-keyframes colorChange {
+@-webkit-keyframes wrongBump_anim {
   0% {
-    background-color: var(--GuardRed);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   25% {
-    background-color: var(--PlayerGreen);
+    -webkit-transform: scale(1.01) rotate(2deg);
+            transform: scale(1.01) rotate(2deg);
+  }
+  50% {
+    -webkit-transform: scale(1.02) rotate(-2deg);
+            transform: scale(1.02) rotate(-2deg);
   }
   75% {
-    background-color: var(--VIPGold);
+    -webkit-transform: scale(1.01) rotate(2deg);
+            transform: scale(1.01) rotate(2deg);
   }
   100% {
-    background-color: var(--GuardRed);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
-@keyframes colorChange {
+@keyframes wrongBump_anim {
   0% {
-    background-color: var(--GuardRed);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   25% {
-    background-color: var(--PlayerGreen);
+    -webkit-transform: scale(1.01) rotate(2deg);
+            transform: scale(1.01) rotate(2deg);
+  }
+  50% {
+    -webkit-transform: scale(1.02) rotate(-2deg);
+            transform: scale(1.02) rotate(-2deg);
   }
   75% {
-    background-color: var(--VIPGold);
+    -webkit-transform: scale(1.01) rotate(2deg);
+            transform: scale(1.01) rotate(2deg);
   }
   100% {
-    background-color: var(--GuardRed);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
-@-webkit-keyframes smallScaleBump {
+@-webkit-keyframes rightBump_anim {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -43,7 +59,7 @@
   }
 }
 
-@keyframes smallScaleBump {
+@keyframes rightBump_anim {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -92,8 +108,15 @@
 
 .quiz .quizItem.wrong {
   border: 1px rgba(255, 0, 0, 0.5) solid !important;
-  -webkit-animation: smallScaleBump 1s ease-in-out forwards;
-          animation: smallScaleBump 1s ease-in-out forwards;
+  -webkit-animation: wrongBump_anim 0.7s ease-in-out forwards;
+          animation: wrongBump_anim 0.7s ease-in-out forwards;
+}
+
+.quiz .quizItem.right {
+  border: 1px rgba(0, 255, 55, 0.5) solid !important;
+  background-color: #239f9c !important;
+  -webkit-animation: rightBump_anim 0.7s ease-in-out forwards;
+          animation: rightBump_anim 0.7s ease-in-out forwards;
 }
 
 .quiz .quizItem:hover .circle,

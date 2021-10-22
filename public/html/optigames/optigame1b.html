@@ -45,7 +45,7 @@
 </div>
 <div class="codeinputContainer">
   <textarea id="codeinput">
-const gate = "closed";
+const gate = "close";
 gate = "open";
 gate;
   </textarea>
@@ -53,18 +53,6 @@ gate;
 <div class="task">
   <table class="codeBlock" style="width: 100%">
     <tbody>
-      <!-- <tr>
-        <th class="code">TASK: Find the error and fix it!</th>
-      </tr>
-      <tr>
-        <td class="code">
-          const gate = "closed";
-          <br />
-          gate = "open";
-          <br />
-          gate;
-        </td>
-      </tr> -->
       <tr>
         <th class="code">OUTPUT</th>
       </tr>
@@ -75,12 +63,8 @@ gate;
   </table>
 </div>
 
-<!-- <div class="go active">
-  <a href="../html/temp.html?page=Base/base" class="button" type="button"
-    ><span>Back to Base</span></a>
-</div> -->
 
-<div style="display: flex; justify-content: center; gap: 10vh;">
+<div style="display: flex; justify-content: center; gap: 10vh">
   <div class="go active">
     <a
       href="../html/temp.html?page=optigames/optigame1a"
@@ -91,27 +75,50 @@ gate;
   </div>
 
   <div class="go">
-    <a
-      href="../html/temp.html?page=Base/base"
-      class="button"
-      type="button"
+    <a href="../html/temp.html?page=Base/base" class="button" type="button"
       ><span>Next</span></a
     >
   </div>
 </div>
 
-
 <script>
   // Check given input for correctness
-  const validate = (val) => {
-    if (val.includes("let gate")) setter();
+  // const validate = (val) => {
+  //   if (val.includes("let gate")) setter();
+  // };
+
+  // // Gets called when given input is correct
+  // const setter = () => {
+  //   setAnim(true);
+  //   // Marshallah bruddi
+  //   $(".codeBlock .output").html("You did fine 🎉");
+  //   $(".go").toggleClass("active", true);
+  // };
+
+   // Check given input for correctness
+   const validate = (val) => {
+    let split_lines = val.split("\n")
+
+    const letReg = /let gate(?: |)=(?: |)(?:'|")close(?:'|");/g;
+    const constReg = /const/g;
+    let let_check = 0;
+    let const_check = 0
+
+    for (let line of split_lines){
+      if (line.match(letReg)) let_check++
+      if (line.match(constReg)) const_check++
+    }
+
+    setter(let_check == 1 && const_check == 0);
   };
 
   // Gets called when given input is correct
-  const setter = () => {
-    setAnim(true);
-    $(".codeBlock .output").html("You did fine 🎉");
-    $(".go").toggleClass("active", true)
+  const setter = (bool) => {
+    setAnim(bool);
+
+    if (bool) {
+      $(".codeBlock .output").html("Marshallah Bruddi 🎉"); // You did fine 🎉
+      $(".go").toggleClass("active", true)
+    }
   };
 </script>
-

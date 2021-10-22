@@ -87,20 +87,31 @@ gate;
 <script>
   // Check given input for correctness
   const validate = (val) => {
-    let regEx = /let gate = (?:'|")close(?:'|");/g;
-    const let_check = val.search(regEx) !== -1;
+    let split_lines = val.split("\n")
 
-    regEx = /gate = (?:'|")open(?:'|");/g;
-    const assign_check = val.search(regEx) !== -1;
+    const letReg = /let gate = (?:'|")close(?:'|");/g;
+    const assignReg = /gate(?: |)=(?: |)(?:'|")open(?:'|");/g;
+    let let_check = 0;
+    let assign_check = 0
 
-    if (let_check && assign_check) setter();
+    for (let line of split_lines){
+      if (line.match(letReg)) let_check++
+      if (line.match(assignReg)) assign_check++
+    }
+    // const let_check = val.search(regEx) !== -1;
+    // const assign_check = val.search(regEx) !== -1;
+
+    setter(let_check == 1 && assign_check == 1);
   };
 
   // Gets called when given input is correct
-  const setter = () => {
-    setAnim(true);
-    $(".codeBlock .output").html("You did fine 🎉");
-    $(".go").toggleClass("active", true)
+  const setter = (bool) => {
+    setAnim(bool);
+
+    if (bool) {
+      $(".codeBlock .output").html("Marshallah Bruddi 🎉"); // You did fine 🎉
+      $(".go").toggleClass("active", true)
+    }
   };
 
   function populate_outputs(header_txt, code_txt, output_txt) {

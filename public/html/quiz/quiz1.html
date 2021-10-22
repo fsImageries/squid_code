@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="../styles/css/glow_on_hover.css" />
 <link rel="stylesheet" href="../styles/css/buttons.css" />
 
-
 <div class="quiz">
   <div class="frage">Hier steht eine Quizfrage...</div>
 
@@ -23,7 +22,10 @@
     </div>
   </div>
 
-  <div style="display: flex; justify-content: center; gap: 10vh;">
+  <div
+    class="buttonHolder"
+    style="display: flex; justify-content: center; gap: 10vh; width: 0vh"
+  >
     <div class="go">
       <a
         href="../html/temp.html?page=optigames/optigame1a"
@@ -34,15 +36,13 @@
     </div>
 
     <div class="go">
-      <a
-        href="../html/temp.html?page=base/base"
-        class="button"
-        type="button"
+      <a href="../html/temp.html?page=base/base" class="button" type="button"
         ><span>Game</span></a
       >
     </div>
   </div>
 </div>
+
 
 <script>
   const quiz = {
@@ -64,14 +64,14 @@
         "Der Zweck einer Variable ist es, ...",
 
         `Welchen Wert hat 'statement'?\n
-      meinKochbuch = 'The Joy of Cooking'
-      deinKochbuch = 'How to Cook Everything'
-      statement    = 'Mein Lieblingskochbuch ist ' + meinKochbuch`,
+<code>meinKochbuch = 'The Joy of Cooking'</code>
+<code>deinKochbuch = 'How to Cook Everything'</code>
+<code>statement    = 'Mein Lieblingskochbuch ist ' + meinKochbuch</code>`,
 
         `Was ist der Wert von numSides?\n
-      numSides = 4
-      triangle = 3
-      numSides = triangle`,
+<code>numSides = 4</code>
+<code>triangle = 3</code>
+<code>numSides = triangle</code>`,
       ],
       rights: [2, 2, 2],
     },
@@ -80,7 +80,7 @@
   function* populate_quiz() {
     let round = quiz.round1;
     for (let i = 0; i < round.questions.length; i++) {
-      $(".frage").text(round.questions[i]);
+      $(".frage").html(round.questions[i]);
       $(".text").each((idx, elem) => {
         $(elem).text(round.answers[i][idx]);
       });
@@ -94,17 +94,26 @@
 
   $(".quizItem").on("click", function () {
     const check = this.className.includes(right);
+    console.log(right);
     if (check) {
-      const ret = iter.next();
-      right = ret.value;
-      isDone = ret.done;
+      // const ret = iter.next();
+      // isDone = ret.done;
+      // right = ret.value ? ret.value : right;
 
-      $(".quizItem").toggleClass("wrong", false);
+      $(this).toggleClass("right", true);
+      $(this).on("animationend", () => {
+        const ret = iter.next();
+        isDone = ret.done;
+        right = ret.value ? ret.value : right;
+        $(this).toggleClass("right", false);
+        if (!isDone) $(".quizItem").toggleClass("wrong", false);
+      });
     } else {
       $(this).toggleClass("wrong", true);
     }
 
     if (isDone) {
+      $(".buttonHolder").css({ width: "auto" });
       $(".go").toggleClass("active", true);
     }
   });

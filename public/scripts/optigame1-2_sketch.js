@@ -4,9 +4,10 @@ let anim = false;
 const setAnim = (val) => (anim = val);
 
 function setup() {
+  const check = $(".codeinputContainer").height() >= 100
   let cnv = createCanvas(
     $(".codeinputContainer").width(),
-    $(".codeinputContainer").height() * 2
+    check ? $(".codeinputContainer").height() * 2 : 200
   );
   cnv.parent("sketchHolder");
 }
@@ -45,5 +46,12 @@ function draw() {
   fill($(":root").css("--GuardRed"));
   rect(width / 2 + push, 0, width, height);
 
-  push = anim ? push + 2 : push;
+  // push = anim ? push + 2 : push;
+
+  if (anim) push = push < width/2 ? push + 2: width/2
+  else push = push > 0 ? push - 2 : 0
+}
+
+function windowResized() {
+  resizeCanvas($(".codeinputContainer").width(), $(".codeinputContainer").height() * 2);
 }
