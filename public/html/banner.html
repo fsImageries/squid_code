@@ -1,7 +1,18 @@
+<script src="../scripts/mgGlitch.min.js"></script>
+
 <link rel="stylesheet" href="../styles/css/glitch.css" />
+<link rel="stylesheet" href="../styles/css/start.css" />
+
+<div class="startCircleContainer">
+  <div class="startCircleBtn"></div>
+</div>
 
 <div id="app">
   <div id="wrapper">
+
+    <!-- <div class="container">
+      <div class="glitch-img" style="background-image: url('https://i.redd.it/7xtw5z7p2ar71.jpg')"></div>
+    </div> -->
     <h1
       class="glitch"
       data-text="
@@ -9,6 +20,53 @@
     >
       Hello Player,
     </h1>
-    <h1 class="sub line-1 anim-typewriter">Welcome to the First Game</h1>
+    <h1 class="sub line-1">Welcome to Squid Code</h1>
   </div>
 </div>
+
+<!-- <embed src="../audio/creepy.wav" type="" autostart="1"> -->
+<!-- <iframe src="../audio/creepy.wav" allow="autoplay" frameborder="0"></iframe>
+ -->
+<audio id="audio" autoplay controls style="display: none;">
+  <source src="../audio/creepy.wav" type="audio/wav" />
+</audio>
+
+<!-- <script type="text/javascript">
+  function autoplay(){
+      var r =confirm("Would You Like To AutoPlay Music?");
+      if (r == true) {
+          document.getElementById("audio").play();
+      }
+    }
+  </script>
+  <script>autoplay();</script>  -->
+
+<script>
+  $(".startCircleContainer").on("click", () => {
+    $("#audio").trigger("play");
+    $("#app").css({ opacity: 1 });
+    $(".sub").toggleClass("anim-typewriter", true);
+    $(".startCircleBtn").css({ transform: "scale(50)", opacity: 0 });
+
+    setTimeout(()=>{
+      $(".startCircleContainer").css("z-index", -1);
+      $(".startCircleContainer").css("display", "none");
+    }, 1000)
+  });
+
+  $(function() {
+               $(".glitch-img").mgGlitch({
+                    destroy: false,
+                    glitch: true,
+                    scale: true,
+                    blend: true,
+                    blendModeType: 'hue',
+                    glitch1TimeMin: 200,
+                    glitch1TimeMax: 400,
+                    glitch2TimeMin: 10,
+                    glitch2TimeMax: 100
+               });
+          });
+</script>
+
+<script src="../scripts/audio.js"></script>
