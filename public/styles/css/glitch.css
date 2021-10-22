@@ -1,38 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:100");
-:root {
-  --white: #fff;
-  --GuardRed: #ed1b76;
-  --GuardRedLight: #f44786;
-  --PlayerGreenDark: #037a79ff;
-  --PlayerGreen: #037a76;
-  --PlayerGreenLight: #239f9c;
-  --StairPink: #fcb6eaff;
-  --StairPinkDarker: #bb66a7;
-  --StairGreen: #e1feacff;
-  --FloorGrey: #485b79ff;
-  --StairBlueGreen: #43bcccff;
-  --VIPGold: #fcc201;
-  --FrontManGrey: #344f6a;
-
-  --color-navy-800: #10162f;
-
-  --typoPro: "TYPOGRAPH PRO", sans-serif;
-  --montserrat: "Montserrat", sans-serif;
-  --hack: Hack, monospace;
-}
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: Hack, monospace;
-}
-
 .content{
   margin-bottom: 0;
 }
 
 .line-1 {
-  position: relative;
+  /* position: relative; */
   top: 50%;
   width: 24em;
   margin: 0 auto;
@@ -41,7 +12,7 @@ body {
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
 }
 
 /* Animation */
@@ -117,6 +88,11 @@ body {
 
 #wrapper {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10vh;
 }
 
 .sub {
@@ -124,6 +100,7 @@ body {
   color: red;
   letter-spacing: 1em;
   font-size: 1rem;
+  margin-bottom: 20vh;
 }
 
 /* Our mixin positions a copy of our text

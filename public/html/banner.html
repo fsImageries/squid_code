@@ -2,6 +2,7 @@
 
 <link rel="stylesheet" href="../styles/css/glitch.css" />
 <link rel="stylesheet" href="../styles/css/start.css" />
+<link rel="stylesheet" href="../styles/css/buttons.css" />
 
 <div class="startCircleContainer">
   <div class="startCircleBtn"></div>
@@ -22,24 +23,23 @@
     </h1>
     <h1 class="sub line-1">Welcome to Squid Code</h1>
   </div>
+  <div class="go">
+    <a
+      href="../html/temp.html?page=vorrunden/vorrunde1"
+      class="button glitch"
+      type="button"
+      style="transform: scale(.7);"
+      ><span>Start journey</span></a
+    >
+  </div>
 </div>
 
-<!-- <embed src="../audio/creepy.wav" type="" autostart="1"> -->
-<!-- <iframe src="../audio/creepy.wav" allow="autoplay" frameborder="0"></iframe>
- -->
+
+
 <audio id="audio" autoplay controls style="display: none;">
   <source src="../audio/creepy.wav" type="audio/wav" />
 </audio>
 
-<!-- <script type="text/javascript">
-  function autoplay(){
-      var r =confirm("Would You Like To AutoPlay Music?");
-      if (r == true) {
-          document.getElementById("audio").play();
-      }
-    }
-  </script>
-  <script>autoplay();</script>  -->
 
 <script>
   $(".startCircleContainer").on("click", () => {
@@ -53,6 +53,10 @@
       $(".startCircleContainer").css("display", "none");
     }, 1000)
   });
+
+  $(".sub").on("animationend", ()=>{
+    $(".go").toggleClass("active", true)
+  })
 
   $(function() {
                $(".glitch-img").mgGlitch({

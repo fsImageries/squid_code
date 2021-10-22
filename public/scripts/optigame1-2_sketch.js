@@ -16,7 +16,7 @@ function draw() {
   const tri = width / 3;
   const offset = tri / 2;
   const dispHeight = 100;
-  const newDist = (tri * 3 - offset - width / 2) / 2;
+  const newDist = (tri * 3 - offset - width / 2) / 3;
 
   background($(":root").css("--CardBrown"));
   noFill();
